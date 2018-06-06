@@ -1,4 +1,4 @@
-ActiveAdmin.register Patient do
+	ActiveAdmin.register Patient do
 	permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir
 
 	form do |f|
