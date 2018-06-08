@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 2018_06_07_233203) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "histories", force: :cascade do |t|
+    t.string "no_urut", limit: 16
+    t.string "no_rekam_medis", limit: 16
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "patient_infos", force: :cascade do |t|
     t.string "kota"
     t.string "kabupaten"
