@@ -59,9 +59,10 @@ ActiveRecord::Schema.define(version: 2018_06_08_092648) do
   end
 
   create_table "patient_infos", force: :cascade do |t|
+    t.string "provinsi", limit: 45
     t.string "kota", limit: 45
-    t.string "kabupaten", limit: 45
     t.string "kecamatan", limit: 45
+    t.string "alamat", limit: 45
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "patient_id"
