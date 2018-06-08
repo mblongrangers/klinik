@@ -8,5 +8,7 @@ class Patient < ApplicationRecord
 	validates :jenis_kelamin, presence: true
 	validates :tempat_lahir, presence: true
 	validates :tanggal_lahir, presence: true
-	
+
+  has_one :patient_info, dependent: :destroy
+  accepts_nested_attributes_for :patient_info, allow_destroy: true
 end
