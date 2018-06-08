@@ -1,6 +1,6 @@
 class PatientInfo < ApplicationRecord
 	validates :provinsi, presence: true
-	validates :"kota/kabupaten", presence: true
+	validates :kota, presence: true
 	validates :kecamatan, presence: true
 	validates :alamat, presence: true
 

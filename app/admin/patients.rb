@@ -1,5 +1,5 @@
 	ActiveAdmin.register Patient do
-	permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir, patient_info_attributes: [ :kota, :kabupaten, :kecamatan ]
+	permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir, patient_info_attributes: [ :provinsi, :kota, :kecamatan, :alamat ]
 
 	form do |f|
 		f.inputs do
@@ -18,9 +18,10 @@
 
     f.inputs do
       f.has_many :patient_info do |p|
+        p.input :provinsi
         p.input :kota
-        p.input :kabupaten
         p.input :kecamatan
+        p.input :alamat
       end
     end
 
@@ -37,9 +38,10 @@
       row :tanggal_lahir
 
       attributes_table_for patient.patient_info do
+        row :provinsi
         row :kota
-        row :kabupaten
         row :kecamatan
+        row :alamat
       end
     end
 
