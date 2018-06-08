@@ -1,4 +1,5 @@
 	ActiveAdmin.register PatientInfo do
+  menu false
 	permit_params :kota, :kabupaten, :kecamatan
 
 	form do |f|
@@ -8,5 +9,5 @@
 			f.input :kecamatan
 			f.actions
 		end
-	end		
+	end
 end
