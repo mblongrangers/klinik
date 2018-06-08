@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_233203) do
+ActiveRecord::Schema.define(version: 2018_06_08_092648) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -50,10 +50,18 @@ ActiveRecord::Schema.define(version: 2018_06_07_233203) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "medicine_recipes", force: :cascade do |t|
+    t.string "kodeobat", limit: 15
+    t.string "namaobat", limit: 45
+    t.datetime "tanggal_kadaluarsa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "patient_infos", force: :cascade do |t|
-    t.string "kota"
-    t.string "kabupaten"
-    t.string "kecamatan"
+    t.string "kota", limit: 45
+    t.string "kabupaten", limit: 45
+    t.string "kecamatan", limit: 45
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "patient_id"
