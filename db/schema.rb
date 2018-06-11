@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_08_092648) do
+ActiveRecord::Schema.define(version: 2018_06_11_155318) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,9 +43,25 @@ ActiveRecord::Schema.define(version: 2018_06_08_092648) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "diseases", force: :cascade do |t|
+    t.string "keluhan_utama", limit: 45
+    t.string "kode_penyakit", limit: 7
+    t.string "nama_penyakit", limit: 45
+    t.string "gejala_gejala"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "nama"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "histories", force: :cascade do |t|
     t.string "no_urut", limit: 16
     t.string "no_rekam_medis", limit: 16
+    t.integer "poli_tujuan", limit: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

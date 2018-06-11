@@ -1,4 +1,4 @@
-class CreatePatientInfos < ActiveRecord::Migration[5.2]
+		class CreatePatientInfos < ActiveRecord::Migration[5.2]
   def change
     create_table :patient_infos do |t|
       t.string :provinsi, limit: 45

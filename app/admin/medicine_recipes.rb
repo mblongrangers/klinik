@@ -4,8 +4,8 @@ ActiveAdmin.register MedicineRecipe do
 
 	form do |f|
 		f.inputs do
-			f.input :kodeobat
-			f.input :namaobat
+			f.input :kodeobat, label: "Kode obat"
+			f.input :namaobat, label: "Nama obat"
 			f.input :tanggal_kadaluarsa, as: :datepicker,
 				datepicker_option: {
 					min_date: "2017-01-01",

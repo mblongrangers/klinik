@@ -5,7 +5,7 @@
 	form do |f|
 		f.inputs do
 			f.input :provinsi
-			f.input :kota
+			f.input :kota, label: "Kota / Kabupaten"
 			f.input :kecamatan
 			f.input :alamat
 			f.actions
