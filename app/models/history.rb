@@ -1,4 +1,5 @@
 class History < ApplicationRecord
+  belongs_to :doctor
 	enum poli_tujuan: { "Umum":1, "Gigi":0}
 
 	validates :no_urut, presence: true

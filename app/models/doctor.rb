@@ -1,7 +1,4 @@
 class Doctor < ApplicationRecord
+  has_many :histories
 	validates :nama, presence: true
-end
-class Doctor < ApplicationRecord
-	validates :nama, presence: true
-	
 end
