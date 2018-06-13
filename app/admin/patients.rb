@@ -1,5 +1,7 @@
 	ActiveAdmin.register Patient do
-	permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir, patient_info_attributes: [ :provinsi, :kota, :kecamatan, :alamat ]
+    permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir,
+      patient_info_attributes: [ :provinsi, :kota, :kecamatan, :alamat ],
+      histories_attributes: [ :no_urut, :no_rekam_medis, :poli_tujuan, :doctor_id ]
 
 	form do |f|
 		f.inputs do
@@ -25,6 +27,15 @@
       end
     end
 
+    f.inputs do
+      f.has_many :histories do |a|
+        a.input :no_urut
+        a.input :no_rekam_medis
+        a.input :poli_tujuan
+        a.input :doctor, collection: Doctor.all.map {|u| [u.nama.to_s, u.id]}
+      end
+    end
+
     f.actions
 	end
 
@@ -42,6 +53,13 @@
         row :kota
         row :kecamatan
         row :alamat
+      end
+
+      attributes_table_for patient.histories do
+        row :no_urut
+        row :no_rekam_medis
+        row :poli_tujuan
+        row :doctor
       end
     end
 

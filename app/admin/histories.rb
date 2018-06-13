@@ -8,6 +8,7 @@
 			f.input :no_rekam_medis, label: "No. rekam medis"
 			f.input :poli_tujuan, label: "Poli tujuan"
       f.input :doctor, collection: Doctor.all.map {|u| [u.nama.to_s, u.id]}
+      f.input :patient, collection: Patient.all.map {|u| [u.nama_lengkap.to_s, u.id]}
 			f.actions
 		end
 	end

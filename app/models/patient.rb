@@ -10,5 +10,8 @@ class Patient < ApplicationRecord
 	validates :tanggal_lahir, presence: true
 
   has_one :patient_info, dependent: :destroy
+  has_many :histories, dependent: :destroy
+
   accepts_nested_attributes_for :patient_info, allow_destroy: true
+  accepts_nested_attributes_for :histories, allow_destroy: true
 end
