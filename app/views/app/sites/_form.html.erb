@@ -1,0 +1,10 @@
+<%= form_for :patient, url: app_sites_search_path do |form| %>
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

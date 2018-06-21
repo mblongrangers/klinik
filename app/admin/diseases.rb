@@ -1,5 +1,7 @@
 ActiveAdmin.register Disease do
 
+  menu false
+
 	permit_params :keluhan_utama, :kode_penyakit, :nama_penyakit, :gejala_gejala
 
 	form do |f|

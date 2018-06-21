@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_155318) do
+ActiveRecord::Schema.define(version: 2018_06_21_142340) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_155318) do
     t.string "gejala_gejala"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "history_id"
+    t.index ["history_id"], name: "index_diseases_on_history_id"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -64,6 +66,10 @@ ActiveRecord::Schema.define(version: 2018_06_11_155318) do
     t.integer "poli_tujuan", limit: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "doctor_id"
+    t.integer "patient_id"
+    t.index ["doctor_id"], name: "index_histories_on_doctor_id"
+    t.index ["patient_id"], name: "index_histories_on_patient_id"
   end
 
   create_table "medicine_recipes", force: :cascade do |t|
@@ -72,6 +78,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_155318) do
     t.datetime "tanggal_kadaluarsa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "history_id"
+    t.index ["history_id"], name: "index_medicine_recipes_on_history_id"
   end
 
   create_table "patient_infos", force: :cascade do |t|

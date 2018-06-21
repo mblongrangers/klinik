@@ -1,5 +1,7 @@
 	ActiveAdmin.register Patient do
-	permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir, patient_info_attributes: [ :provinsi, :kota, :kecamatan, :alamat ]
+    permit_params :nama_lengkap, :no_telepon, :pelayanan, :jenis_kelamin, :tempat_lahir, :tanggal_lahir,
+      patient_info_attributes: [ :provinsi, :kota, :kecamatan, :alamat ],
+      histories_attributes: [ :no_urut, :no_rekam_medis, :poli_tujuan, :doctor_id ]
 
 	form do |f|
 		f.inputs do
