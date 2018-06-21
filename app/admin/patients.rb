@@ -45,13 +45,6 @@
         row :kecamatan
         row :alamat
       end
-
-      attributes_table_for patient.histories do
-        row :no_urut
-        row :no_rekam_medis
-        row :poli_tujuan
-        row :doctor
-      end
     end
 
   end

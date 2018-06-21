@@ -1,5 +1,7 @@
 ActiveAdmin.register MedicineRecipe do
 
+  menu false
+
 	permit_params :kodeobat, :namaobat, :tanggal_kadaluarsa
 
 	form do |f|
