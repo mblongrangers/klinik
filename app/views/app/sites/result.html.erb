@@ -1,0 +1,17 @@
+<h1>Info Pasien</h1>
+<p>Nama Lengkap : <%= @patient.nama_lengkap %></p>
+<p>Nomor Telepon : <%= @patient.no_telepon %></p>
+<p>Jenis Pelayanan : <%= @patient.pelayanan %></p>
+<p>Jeni Kelamin : <%= @patient.jenis_kelamin %></p>
+<p>Tempat, Tanggal Lahir : <%= @patient.tempat_lahir %>, <%= @patient.tanggal_lahir %></p>
+
+<h2>Riwayat Berobat Pasien</h2>
+<% @patient.histories.each do |history| %>
+  <hr>
+  <p>Nomor Rekam Medis : <%= history.no_rekam_medis %></p>
+  <p>Nomor Urut : <%= history.no_urut %></p>
+  <p>Poli Tujuan : <%= history.poli_tujuan %></p>
+  <p>Dokter yang menangani : <%= history.doctor.nama %></p>
+  <hr>
+<% end %>
+

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  namespace :app do
+    get 'sites/patient'
+    post 'sites/search'
+    get 'sites/result/:id', to: 'sites#result', as: 'sites_result'
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root to: 'app/sites#patient'
 end

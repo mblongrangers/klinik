@@ -27,15 +27,6 @@
       end
     end
 
-    f.inputs do
-      f.has_many :histories do |a|
-        a.input :no_urut
-        a.input :no_rekam_medis
-        a.input :poli_tujuan
-        a.input :doctor, collection: Doctor.all.map {|u| [u.nama.to_s, u.id]}
-      end
-    end
-
     f.actions
 	end
 

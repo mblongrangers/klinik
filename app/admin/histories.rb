@@ -1,6 +1,6 @@
 	ActiveAdmin.register History do
 
-    permit_params :no_urut, :no_rekam_medis, :poli_tujuan, :doctor_id
+    permit_params :no_urut, :no_rekam_medis, :poli_tujuan, :doctor_id, :patient_id
 
 	form do |f|
 		f.inputs do
