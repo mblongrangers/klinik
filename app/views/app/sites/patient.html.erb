@@ -1,5 +1,14 @@
-<p class="lead">Masukan Nomor Pasien Anda</p>
-<small>Nomor Pasien digunakan untuk melihat Riwayat Berobat Anda pada Klikik Medika</small>
+<div class="jumbotron">
+  <h2 class="text-primary">Selamat Datang di Klinik Medika Karawaci</h2>
+  <p>Silahkan masukan ID Pasien Anda untuk melihat Riwayat Berobat Anda di Klinik Medika Karawaci dimanapun dan kapanpun.</p>
+</div>
 
-<%= render 'form', patient: @patient %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p class="lead">Masukan Nomor Pasien Anda</p>
+    <small>Nomor Pasien digunakan untuk melihat Riwayat Berobat Anda pada Klikik Medika</small>
+
+    <%= render 'form', patient: @patient %>
+  </div>
+</div>
 
