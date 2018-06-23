@@ -60,3 +60,5 @@ gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
