@@ -6,10 +6,11 @@
       </div>
       <div class="panel-body">
         <p><strong>Nama Lengkap</strong> : <%= @patient.nama_lengkap %></p>
+        <p><strong>Nomor Pasien</strong> : <%= @patient.no %></p>
         <p><strong>Nomor Telepon</strong> : <%= @patient.no_telepon %></p>
         <p><strong>Jenis Pelayanan</strong> : <%= @patient.pelayanan %></p>
         <p><strong>Jenis Kelamin</strong> : <%= @patient.jenis_kelamin %></p>
-        <p><strong>Tempat, Tanggal Lahir</strong> : <%= @patient.tempat_lahir %>, <%= @patient.tanggal_lahir %></p>
+        <p><strong>Tempat, Tanggal Lahir</strong> : <%= @patient.tempat_lahir %>, <%= @patient.tanggal_lahir.to_s[0..-14] %></p>
       </div>
     </div>
 

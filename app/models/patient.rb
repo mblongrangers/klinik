@@ -14,4 +14,12 @@ class Patient < ApplicationRecord
 
   accepts_nested_attributes_for :patient_info, allow_destroy: true
   accepts_nested_attributes_for :histories, allow_destroy: true
+
+  after_create :construct_number
+
+  private
+  def construct_number
+    self.no = "#{self.id}#{Time.now.to_s[0..9].remove('-')}".to_i
+    self.save
+  end
 end

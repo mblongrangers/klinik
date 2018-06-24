@@ -33,6 +33,7 @@
   show do
     attributes_table do
       row :nama_lengkap
+      row :no
       row :no_telepon
       row :pelayanan
       row :jenis_kelamin
